@@ -1,7 +1,11 @@
+import { useState } from 'react'
 import logo from './logo.svg';
 import './App.css';
+import LargeText from './components/LargeText';
+import { Multiple  } from './components/LargeText';
 
 function App() {
+  let [counter, setCounter] = useState(0)
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +22,9 @@ function App() {
           Learn React
         </a>
       </header>
+      <button onClick={() => setCounter(counter + 1)}>Click me</button>
+      <LargeText text1="Learning React is fun :)" text2={`Button clicked ${counter} times`} />
+      <Multiple />
     </div>
   );
 }
